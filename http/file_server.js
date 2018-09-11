@@ -30,7 +30,7 @@ let server = http.createServer(function (request, response) {
       response.writeHead(200);
       // 将文件流导向response:
       fs.createReadStream(filepath).pipe(response);
-    } else if (!err && stats.isDirectory()) { // 这里需要写一个递归查询文件
+    } else if (!err && stats.isDirectory()) { 
       fs.readdir(filepath, 'utf8', function (err, files) {
         console.log(files);
         if (err) {
